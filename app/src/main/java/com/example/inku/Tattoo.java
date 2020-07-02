@@ -23,7 +23,10 @@ public class Tattoo extends AppCompatActivity {
     ImageButton tattoo4;
     ImageButton tattoo5;
     ImageButton tattoo6;
-    
+    ImageButton dropdwn;
+    ImageView tattoo;
+    ImageView bodytattoo;
+    TextView hintergrund;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,14 +34,16 @@ public class Tattoo extends AppCompatActivity {
 
 
 
-        ImageButton dropdwn = (ImageButton)findViewById(R.id.imageButton4);
-        ImageView tattoo = (ImageView)findViewById(R.id.bild);
+         dropdwn = (ImageButton)findViewById(R.id.imageButton4);
+         tattoo = (ImageView)findViewById(R.id.bild);
          tattoo1 = (ImageButton)findViewById(R.id.tattoo1);
          tattoo2 = (ImageButton)findViewById(R.id.tattoo2);
          tattoo3 = (ImageButton)findViewById(R.id.tattoo3);
          tattoo4 = (ImageButton)findViewById(R.id.tattoo4);
          tattoo5 = (ImageButton)findViewById(R.id.tattoo5);
          tattoo6 = (ImageButton)findViewById(R.id.tattoo6);
+         bodytattoo = (ImageView)findViewById(R.id.bodytattoo);
+        hintergrund = (TextView)findViewById(R.id.textView2);
         //get the picture
         Intent intent = getIntent();
         Bitmap bitmap = (Bitmap) intent.getParcelableExtra("key");
@@ -46,7 +51,7 @@ public class Tattoo extends AppCompatActivity {
 
 
 
-        //Open the ViewList
+        //Open the Tattoolist
         dropdwn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -54,14 +59,91 @@ public class Tattoo extends AppCompatActivity {
                 if(opened==false){
                     showTattoos();
                     opened = true;
+                    bodytattoo.setVisibility(View.INVISIBLE);
                 }
                 else if(opened==true){
-                   hideTattoos();
+                    hideTattoos();
                     opened = false;
+                    bodytattoo.setVisibility(View.INVISIBLE);
                 }
             }
         });
+
+
+        //Place Tattoo 1
+        tattoo1.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                bodytattoo.setImageResource(R.drawable.tattoo1);
+                hideTattoos();
+                bodytattoo.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        //Place Tattoo 2
+        tattoo2.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                bodytattoo.setImageResource(R.drawable.tattoo2);
+                hideTattoos();
+                bodytattoo.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        //Place Tattoo 3
+        tattoo3.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                bodytattoo.setImageResource(R.drawable.tattoo3);
+                hideTattoos();
+                bodytattoo.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        //Place Tattoo 4
+        tattoo4.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                bodytattoo.setImageResource(R.drawable.tattoo4);
+                hideTattoos();
+                bodytattoo.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        //Place Tattoo 5
+        tattoo5.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                bodytattoo.setImageResource(R.drawable.tattoo5);
+                hideTattoos();
+                bodytattoo.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        //Place Tattoo 6
+        tattoo6.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                bodytattoo.setImageResource(R.drawable.tattoo6);
+                hideTattoos();
+                bodytattoo.setVisibility(View.VISIBLE);
+
+            }
+        });
     }
+
+
     //method to show all the tattoos
     public void showTattoos(){
         tattoo1.setVisibility(View.VISIBLE);
@@ -70,6 +152,7 @@ public class Tattoo extends AppCompatActivity {
         tattoo4.setVisibility(View.VISIBLE);
         tattoo5.setVisibility(View.VISIBLE);
         tattoo6.setVisibility(View.VISIBLE);
+        hintergrund.setVisibility(View.VISIBLE);
     }
     //method to hide tattoos
     public void hideTattoos(){
@@ -79,5 +162,8 @@ public class Tattoo extends AppCompatActivity {
         tattoo4.setVisibility(View.INVISIBLE);
         tattoo5.setVisibility(View.INVISIBLE);
         tattoo6.setVisibility(View.INVISIBLE);
+        hintergrund.setVisibility(View.INVISIBLE);
     }
+
+
 }
