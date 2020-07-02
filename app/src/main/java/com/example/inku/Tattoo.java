@@ -24,8 +24,7 @@ public class Tattoo extends AppCompatActivity {
         setContentView(R.layout.activity_tattoo);
 
         ImageButton dropdwn = (ImageButton)findViewById(R.id.imageButton4);
-        ImageView tattoo = (ImageView)findViewById(R.id.imageView3);
-        final ListView listview = (ListView)findViewById(R.id.listview);
+        ImageView tattoo = (ImageView)findViewById(R.id.bild);
 
         //get the picture
         Intent intent = getIntent();
@@ -34,19 +33,12 @@ public class Tattoo extends AppCompatActivity {
 
         //add the tattoos
 
-
+        //Open the ViewList
         dropdwn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                if(opened==false) {
-                    listview.setVisibility(View.VISIBLE);
-                    opened=true;
-                }
-                else if(opened==true){
-                    listview.setVisibility(View.INVISIBLE);
-                    opened=false;
-                }
+               
             }
         });
     }
