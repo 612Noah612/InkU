@@ -18,23 +18,15 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="155dp"
-        android:layout_height="23dp"
-
+    <ListView
+        android:layout_width="228dp"
+        android:layout_height="297dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.155"
-        />
+        app:layout_constraintVertical_bias="0.216" />
 
-    <ListView
-        android:layout_width="409dp"
-        android:layout_height="108dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="133dp"
-        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
