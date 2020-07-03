@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 
 public class Tattoo extends AppCompatActivity {
     boolean opened=false;
@@ -27,6 +29,8 @@ public class Tattoo extends AppCompatActivity {
     Button bigger;
     int width;
     int height;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -171,6 +175,8 @@ public class Tattoo extends AppCompatActivity {
 
             }
         });
+
+
     }
 
 
@@ -195,5 +201,14 @@ public class Tattoo extends AppCompatActivity {
         hintergrund.setVisibility(View.INVISIBLE);
     }
 
+
+    public boolean onTouchEvent(MotionEvent event) {
+
+        float x = event.getX();
+        float y = event.getY();
+        bodytattoo.setX(x);
+        bodytattoo.setY(y);
+        return false;
+    }
 
 }
