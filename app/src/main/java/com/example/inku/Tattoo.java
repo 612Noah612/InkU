@@ -6,14 +6,10 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class Tattoo extends AppCompatActivity {
     boolean opened=false;
@@ -27,6 +23,10 @@ public class Tattoo extends AppCompatActivity {
     ImageView tattoo;
     ImageView bodytattoo;
     TextView hintergrund;
+    Button smaller;
+    Button bigger;
+    int width;
+    int height;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +43,9 @@ public class Tattoo extends AppCompatActivity {
          tattoo5 = (ImageButton)findViewById(R.id.tattoo5);
          tattoo6 = (ImageButton)findViewById(R.id.tattoo6);
          bodytattoo = (ImageView)findViewById(R.id.bodytattoo);
-        hintergrund = (TextView)findViewById(R.id.textView2);
+         hintergrund = (TextView)findViewById(R.id.textView2);
+         smaller = (Button)findViewById(R.id.smaller);
+         bigger = (Button)findViewById(R.id.bigger);
         //get the picture
         Intent intent = getIntent();
         Bitmap bitmap = (Bitmap) intent.getParcelableExtra("key");
@@ -138,6 +140,34 @@ public class Tattoo extends AppCompatActivity {
                 bodytattoo.setImageResource(R.drawable.tattoo6);
                 hideTattoos();
                 bodytattoo.setVisibility(View.VISIBLE);
+
+            }
+        });
+
+        //Make Tattoo thats on the body smaller
+        smaller.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                width= bodytattoo.getLayoutParams().width;
+                height= bodytattoo.getLayoutParams().height;
+                bodytattoo.getLayoutParams().width = width/2;
+                bodytattoo.getLayoutParams().height = height/2;
+
+
+            }
+        });
+
+
+        //Make Tattoo thats on the body bigger
+        bigger.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                width= bodytattoo.getLayoutParams().width;
+                height= bodytattoo.getLayoutParams().height;
+                bodytattoo.getLayoutParams().width = width*2;
+                bodytattoo.getLayoutParams().height = height*2;
 
             }
         });
