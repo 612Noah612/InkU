@@ -209,8 +209,8 @@ public class Tattoo extends AppCompatActivity {
 
         float x = event.getX();
         float y = event.getY();
-        bodytattoo.setX(x);
-        bodytattoo.setY(y);
+        bodytattoo.setX(x-200);
+        bodytattoo.setY(y-300);
         return false;
     }
 
