@@ -4,9 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -27,6 +29,7 @@ public class Tattoo extends AppCompatActivity {
     TextView hintergrund;
     Button smaller;
     Button bigger;
+    Button savebtn;
     int width;
     int height;
 
@@ -50,6 +53,7 @@ public class Tattoo extends AppCompatActivity {
          hintergrund = (TextView)findViewById(R.id.textView2);
          smaller = (Button)findViewById(R.id.smaller);
          bigger = (Button)findViewById(R.id.bigger);
+         savebtn = (Button)findViewById(R.id.savebtn);
         //get the picture
         Intent intent = getIntent();
         Bitmap bitmap = (Bitmap) intent.getParcelableExtra("key");
@@ -153,10 +157,10 @@ public class Tattoo extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                width= bodytattoo.getLayoutParams().width;
-                height= bodytattoo.getLayoutParams().height;
-                bodytattoo.getLayoutParams().width = width/2;
-                bodytattoo.getLayoutParams().height = height/2;
+                android.view.ViewGroup.LayoutParams params = bodytattoo.getLayoutParams();
+                params.width=bodytattoo.getWidth()/2;
+                params.height=bodytattoo.getHeight()/2;
+                bodytattoo.setLayoutParams(params);
 
 
             }
@@ -168,10 +172,10 @@ public class Tattoo extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                width= bodytattoo.getLayoutParams().width;
-                height= bodytattoo.getLayoutParams().height;
-                bodytattoo.getLayoutParams().width = width*2;
-                bodytattoo.getLayoutParams().height = height*2;
+                android.view.ViewGroup.LayoutParams params = bodytattoo.getLayoutParams();
+                params.width=bodytattoo.getWidth()*2;
+                params.height=bodytattoo.getHeight()*2;
+                bodytattoo.setLayoutParams(params);
             }
         });
 
@@ -200,7 +204,7 @@ public class Tattoo extends AppCompatActivity {
         hintergrund.setVisibility(View.INVISIBLE);
     }
 
-
+    //move the tattoo
     public boolean onTouchEvent(MotionEvent event) {
 
         float x = event.getX();

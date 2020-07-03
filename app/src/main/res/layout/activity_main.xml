@@ -31,12 +31,4 @@
         app:layout_constraintVertical_bias="0.586"
         app:srcCompat="@drawable/start" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:layout_editor_absoluteX="142dp"
-        tools:layout_editor_absoluteY="474dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

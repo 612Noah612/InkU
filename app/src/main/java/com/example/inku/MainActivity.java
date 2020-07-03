@@ -18,17 +18,13 @@ import java.net.URI;
 public class MainActivity extends AppCompatActivity {
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
-    ImageView pic;
     Bitmap photo;
-    Uri pictureUri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         ImageButton start = (ImageButton)findViewById(R.id.imageButton);
-
-        ImageView pic = (ImageView)findViewById(R.id.imageView2);
 
 
         start.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
 
-    //https://stackoverflow.com/questions/7304007/take-picture-from-camera-and-choose-from-gallery-and-display-in-image-view
+    //Code von Robin Bühler
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 

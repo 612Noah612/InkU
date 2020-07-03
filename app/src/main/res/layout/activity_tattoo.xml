@@ -146,6 +146,30 @@
         app:layout_constraintVertical_bias="0.611"
         app:srcCompat="@drawable/tattoo6" />
 
+    <Button
+        android:id="@+id/smaller"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="smaller"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.136"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877" />
+
+    <Button
+        android:id="@+id/bigger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bigger"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877" />
+
     <ImageView
         android:id="@+id/bodytattoo"
         android:layout_width="wrap_content"
@@ -158,28 +182,16 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
-        android:id="@+id/smaller"
+        android:id="@+id/savebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="smaller"
+        android:text="save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877" />
-
-    <Button
-        android:id="@+id/bigger"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bigger"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.749"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.877" />
+        app:layout_constraintVertical_bias="0.961" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
