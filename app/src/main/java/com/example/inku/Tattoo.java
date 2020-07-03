@@ -172,7 +172,6 @@ public class Tattoo extends AppCompatActivity {
                 height= bodytattoo.getLayoutParams().height;
                 bodytattoo.getLayoutParams().width = width*2;
                 bodytattoo.getLayoutParams().height = height*2;
-
             }
         });
 
